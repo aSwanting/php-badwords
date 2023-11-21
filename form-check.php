@@ -1,11 +1,7 @@
 <?php
-
-$text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
-$censor = $_POST['censored_word'];
-
-$censored_text = str_replace($censor, "***", $text);
-
+$user_text = $_POST['user_text'];
+$censored_word = $_POST['censored_word'];
+$censored_text = str_replace($censored_word, "***", $user_text);
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +14,8 @@ $censored_text = str_replace($censor, "***", $text);
 <body>
 
     <h3>Original Text</h3>
-    <p><?php echo $text; ?></p>   
-    <p>Length: <?php echo strlen($text); ?></p>
+    <p><?php echo $user_text; ?></p>   
+    <p>Length: <?php echo strlen($user_text); ?></p>
 
     <h3>Censored Text</h3>
     <p><?php echo $censored_text; ?></p>
