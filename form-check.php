@@ -4,9 +4,9 @@ $text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 
 $censor = $_POST['censored_word'];
 
+$censored_text = str_replace($censor, "***", $text);
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,14 @@ $censor = $_POST['censored_word'];
     <title>Document</title>
 </head>
 <body>
-<p><?php echo $text; ?></p>
-<p><?php echo str_replace($censor, "CENSORED", $text); ?></p>
+
+    <h3>Original Text</h3>
+    <p><?php echo $text; ?></p>   
+    <p>Length: <?php echo strlen($text); ?></p>
+
+    <h3>Censored Text</h3>
+    <p><?php echo $censored_text; ?></p>
+    <p>Length: <?php echo strlen($censored_text); ?></p>
+
 </body>
 </html>
